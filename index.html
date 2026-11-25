@@ -337,6 +337,76 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
 @keyframes ctaR{0%{box-shadow:0 0 0 0 rgba(227,30,36,.55)}100%{box-shadow:0 0 0 16px rgba(227,30,36,0)}}
 .cta.go{animation:cta 1.6s ease-out infinite}
 .cta.go.red,.pbtn.cta.go{animation-name:ctaR}
+.nav.cta.go{animation:cta 1.6s ease-out infinite}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13.5px}
+.tbl th{background:#F1F3FA;text-align:left;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);padding:9px 14px;font-weight:700}
+.tbl td{padding:6.5px 14px;border-top:1px solid var(--line);font-weight:600;white-space:nowrap}
+.tbl .n{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr.low td{background:#FFF7F7}
+#t-veh td{padding:5px 14px}
+#t-svc td{padding:12px 14px}
+.st{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.st i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.st.trip{background:var(--sky);color:var(--blue)}.st.ws{background:#E2E3F6;color:var(--navy)}.st.idle{background:#EEF0F5;color:var(--muted)}
+.sumline{display:flex;gap:8px;margin-bottom:10px}
+.sumline span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.sumline b{color:var(--navy);font-size:14px;margin-right:3px}
+.two{display:grid;grid-template-columns:1fr 272px;gap:14px;height:100%}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:relative}
+.card h4{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.cbar{display:grid;grid-template-columns:112px 1fr 64px;align-items:center;gap:10px;margin-top:15px;font-size:13px;font-weight:600}
+.cbar .trk{height:22px;background:#EEF1F8;border-radius:6px;position:relative}
+.cbar .fill{height:100%;border-radius:6px;background:var(--blue);width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.cbar.hi,.cbar.hi .n{color:var(--red)}.cbar.hi .fill{background:var(--red)}
+.cbar .n{text-align:right;font-variant-numeric:tabular-nums}
+.avg{position:absolute;top:-5px;bottom:-5px;width:0;border-left:2px dashed #11163A;opacity:.55}
+.avglab{position:absolute;top:-17px;transform:translateX(-50%);font-size:10.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.cnote{margin-top:12px;font-size:12px;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:10px}
+.mini{background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 14px}
+.mini h5{font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.mini p{margin-top:4px;font-size:13px;line-height:1.42;color:#2A3156}
+.mini p b{color:var(--red)}
+.brow{display:flex;gap:8px;margin-top:10px}
+.sbtn{flex:1;padding:8px 10px;border-radius:10px;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;text-align:center;white-space:nowrap}
+.sbtn.gh{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.sbtn.ok{background:var(--green);color:#fff}
+.score{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.score i{display:block;width:70px;height:7px;border-radius:4px;background:#EEF1F8;position:relative;overflow:hidden}
+.score i:after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--green);border-radius:4px}
+.score.a i:after{background:var(--amber)}.score.r i:after{background:var(--red)}
+.score.r b{color:var(--red)}.score.a b{color:var(--amber)}
+.privacy{margin-top:10px;display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--muted)}
+.privacy svg{width:16px;height:16px;color:var(--green)}
+.duebar{display:flex;align-items:center;gap:10px}
+.duebar i{display:block;width:150px;height:8px;border-radius:4px;background:#EEF1F8;position:relative;overflow:hidden}
+.duebar i:after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--c,var(--blue));border-radius:4px}
+.utl{margin-top:36px;position:relative}
+.useg{display:grid;grid-template-columns:repeat(4,1fr);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.useg div{padding:9px 8px;text-align:center;font-size:12px;font-weight:700;color:var(--muted);background:#F4F6FB;border-left:1px solid var(--line)}
+.useg div:first-child{border-left:0;background:#EEF0F5}
+.useg div b{display:block;font-size:13px;color:var(--ink)}
+.ufill{position:absolute;left:0;top:0;height:100%;width:0;background:rgba(46,91,255,.16);border-right:3px solid var(--blue);border-radius:10px 0 0 10px;transition:width 1.2s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.unow{position:absolute;top:-24px;font-size:11.5px;font-weight:800;color:var(--blue);transform:translateX(-50%);white-space:nowrap;opacity:0;transition:opacity .4s .9s}
+.utl.on .unow{opacity:1}
+.ustats{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ustats div{background:var(--bg);border-radius:12px;padding:10px 12px}
+.ustats b{display:block;font-size:24px;color:var(--navy);letter-spacing:-.5px}
+.ustats small{font-size:12px;color:var(--muted);font-weight:600}
+.ustats .g b{color:var(--green)}
+.ustats .r b{color:var(--red)}
+.rules{display:flex;flex-direction:column;gap:7px;margin-top:8px}
+.rules div{display:flex;gap:9px;font-size:13px;line-height:1.35;font-weight:600}
+.rules svg{width:16px;height:16px;flex:none;color:var(--green);margin-top:1px}
+.rules .x svg{color:var(--red)}
+.chk{display:grid;grid-template-columns:1fr 230px;align-items:center;gap:14px;padding:13px 16px;border-top:1px solid var(--line);font-size:14px;font-weight:600}
+.chk:first-of-type{border-top:0}
+.chk small{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:2px}
+.badge{justify-self:end;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:800}
+.badge svg{width:14px;height:14px}
+.badge.g{background:var(--green-bg);color:var(--green)}.badge.a{background:var(--amber-bg);color:var(--amber)}.badge.b{background:var(--sky);color:var(--navy)}
+.law{margin-top:12px;display:flex;gap:12px;align-items:center;background:var(--navy);color:#fff;border-radius:14px;padding:13px 16px;font-size:13.5px;line-height:1.45}
+.law svg{width:26px;height:26px;flex:none}
 @keyframes pulse{0%{r:9;opacity:.7}100%{r:30;opacity:0}}
 .pulse{animation:pulse 1.2s ease-out infinite}
 </style>
@@ -517,14 +587,14 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
     <div class="device" id="d-laptop"><div class="laptop"><div class="lid"><div class="lscreen">
       <aside class="side">
         <div class="lg">Suzuki Connect Fleet<small>Concept screens</small></div>
-        <div class="nav" data-n="ov" data-go="9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Overview</div>
-        <div class="nav" data-n="map" data-go="10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Live map</div>
-        <div class="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16v-4l2-5h13l2 5v4Z"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/><path d="M3.5 12h17"/></svg>Vehicles</div>
-        <div class="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="5" width="10" height="16" rx="4"/><path d="M10 5V2.5h4V5M10 11h4"/></svg>CNG and fuel</div>
-        <div class="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Drivers</div>
-        <div class="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.5-7.5a4 4 0 0 0-2-2Z"/></svg>Service</div>
-        <div class="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>Uptime promise</div>
-        <div class="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Compliance</div>
+        <div class="nav cta" data-n="ov" data-go="9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Overview</div>
+        <div class="nav cta" data-n="map" data-go="10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Live map</div>
+        <div class="nav cta" data-n="veh" data-go="11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16v-4l2-5h13l2 5v4Z"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/><path d="M3.5 12h17"/></svg>Vehicles</div>
+        <div class="nav cta" data-n="cng" data-go="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="5" width="10" height="16" rx="4"/><path d="M10 5V2.5h4V5M10 11h4"/></svg>CNG and fuel</div>
+        <div class="nav cta" data-n="drv" data-go="13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Drivers</div>
+        <div class="nav cta" data-n="svc" data-go="14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.5-7.5a4 4 0 0 0-2-2Z"/></svg>Service</div>
+        <div class="nav cta" data-n="upt" data-go="15"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>Uptime promise</div>
+        <div class="nav cta" data-n="cmp" data-go="16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Compliance</div>
       </aside>
       <div class="lmain">
         <div class="lhead"><div><b>Sample Cabs</b><small>12 vehicles · Today, 11:20 am</small></div><div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8Z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg> One plan: ₹250 per vehicle a month</div></div>
@@ -539,10 +609,10 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
           </div>
           <div class="attn">
             <h4>Needs attention</h4>
-            <div class="arow hl"><span class="tagx r">Uptime</span><div><b>Ertiga Tour 03: off the road 31 hours</b><small>Covered repair. Beyond 24 hours, Maruti pays ₹1,000 a day, up to 3 days.</small></div><div class="stamp" id="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> ₹1,000 paid to UPI</div></div>
-            <div class="arow"><span class="tagx a">CNG</span><div><b>Dzire Tour 07: CNG use 27% above fleet average</b><small>11 harsh brakes today. Coach the driver to save about 4.6 kg a day.</small></div><span class="act2">See trips →</span></div>
-            <div class="arow"><span class="tagx b">Service</span><div><b>Dzire Tour 04: service due in 600 km</b><small>Priority bay at the commercial outlet keeps it off the road for the shortest time.</small></div><span class="act2">Book bay →</span></div>
-            <div class="arow"><span class="tagx g">Legal</span><div><b>Ertiga Tour 09: CNG cylinder re-test due next month</b><small>Booked automatically with the next service.</small></div><span class="act2">Booked</span></div>
+            <div class="arow hl tap" data-go="15"><span class="tagx r">Uptime</span><div><b>Ertiga Tour 03: off the road 31 hours</b><small>Covered repair. Beyond 24 hours, Maruti pays ₹1,000 a day, up to 3 days.</small></div><div class="stamp" id="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> ₹1,000 paid to UPI</div></div>
+            <div class="arow"><span class="tagx a">CNG</span><div><b>Dzire Tour 07: CNG use 27% above fleet average</b><small>11 harsh brakes today. Coach the driver to save about 4.6 kg a day.</small></div><span class="act2 tap" data-go="12">See CNG →</span></div>
+            <div class="arow"><span class="tagx b">Service</span><div><b>Dzire Tour 04: service due in 600 km</b><small>Priority bay at the commercial outlet keeps it off the road for the shortest time.</small></div><span class="act2 tap" data-go="14">Book bay →</span></div>
+            <div class="arow tap" data-go="16"><span class="tagx g">Legal</span><div><b>Ertiga Tour 09: CNG cylinder re-test due next month</b><small>Booked automatically with the next service.</small></div><span class="act2">Booked</span></div>
           </div>
           <div class="comp">
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>AIS-140 tracker fitted at delivery: 12 of 12</div>
@@ -560,6 +630,59 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
             </div>
             <div class="vlist" id="vlist"><h4>Vehicles · live</h4></div>
           </div>
+        </div>
+
+        <div class="lview" data-l="veh"><div class="sumline"><span><b>9</b>on trip</span><span><b>1</b>in the workshop</span><span><b>2</b>idle</span><span><b>1,395 km</b>driven today</span></div>
+          <table class="tbl" id="t-veh"><tr><th>Vehicle</th><th>Driver</th><th>Status</th><th class="n">Km today</th><th class="n">Next service in</th></tr></table></div>
+
+        <div class="lview" data-l="cng"><div class="two">
+          <div class="card"><h4>CNG used per 100 km today</h4><div id="cngbars" style="margin-top:20px"></div>
+            <div class="cnote">Red: more than 20% above the fleet average. Not shown: Ertiga Tour 03 (in the workshop), WagonR Tour 08 and Dzire Tour 12 (idle, no trips).</div></div>
+          <div class="stack">
+            <div class="mini"><h5>What it measures</h5><p>Kilograms of CNG per 100 km, so a car that drove more is not unfairly flagged.</p></div>
+            <div class="mini"><h5>What it shows</h5><p>Most cars sit near the fleet average of 9.1 kg. <b>Dzire Tour 07 uses 11.6 kg, about 27% more</b>: roughly 4.6 kg of extra CNG on today's 188 km.</p></div>
+            <div class="mini"><h5>What the owner does</h5><p>High use usually means harsh driving or a car that needs a service. Check both.</p>
+              <div class="brow"><div class="sbtn gh tap" data-go="13">Driver scores</div><div class="sbtn tap" data-go="14">Book a check</div></div></div>
+          </div></div></div>
+
+        <div class="lview" data-l="drv">
+          <table class="tbl" id="t-drv"><tr><th>Driver</th><th>Vehicle</th><th class="n">Score</th><th class="n">Harsh brakes</th><th class="n">Overspeeding</th></tr></table>
+          <div class="privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Scores are shown only to the fleet owner, and drivers are told what is tracked (DPDP). Average score: <b style="color:var(--navy)">85</b></div></div>
+
+        <div class="lview" data-l="svc">
+          <div class="sumline"><span>Due soonest first. A <b>priority bay</b> at the commercial outlet keeps the car off the road for the shortest time.</span></div>
+          <table class="tbl" id="t-svc"><tr><th>Vehicle</th><th>Due in</th><th class="n"></th><th class="n">Priority bay</th></tr></table></div>
+
+        <div class="lview" data-l="upt"><div class="two">
+          <div class="card"><h4>Ertiga Tour 03 · in the workshop for a covered repair</h4>
+            <div class="utl" id="utl"><div class="useg"><div><b>First 24 hours</b>free</div><div><b>Day 1</b>₹1,000</div><div><b>Day 2</b>₹1,000</div><div><b>Day 3</b>₹1,000 (cap)</div></div>
+              <div class="ufill" id="ufill"></div><div class="unow" id="unow" style="left:32.3%">Now: 31 hours</div></div>
+            <div class="ustats">
+              <div><b>31 hrs</b><small>off the road</small></div>
+              <div><b>1 day</b><small>beyond 24 hours</small></div>
+              <div class="g"><b>₹1,000</b><small>paid to the fleet's UPI</small></div>
+              <div class="r"><b>~₹2,600</b><small>driver income lost</small></div>
+            </div>
+            <div class="cnote" style="margin-top:14px">The promise covers part of the lost income, so Maruti and the fleet both want the car back fast. Our model budgets about ₹250 per vehicle a year for payouts.</div>
+            <div style="margin-top:12px"><div class="stamp" id="stamp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> ₹1,000 paid automatically, no claim form</div></div>
+          </div>
+          <div class="card"><h4>The rules</h4><div class="rules">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>First 24 hours free, then ₹1,000 a day</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Up to 3 days per repair, 2 claims a year</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>For cars serviced on time, at outlets with parts in stock</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Starts after 30 days on the plan</div>
+            <div class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6M12 16.5v.5"/></svg>Accident and body repairs excluded: insurance covers them</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Paid to UPI within 7 days, worked out from the job card</div>
+          </div></div></div></div>
+
+        <div class="lview" data-l="cmp">
+          <div class="card" style="padding:0">
+            <div class="chk"><div>Government-approved tracker (AIS-140), fitted before delivery<small>Tracking and panic button compliance built in</small></div><span class="badge g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> All 12 vehicles</span></div>
+            <div class="chk"><div>Panic button tested this month<small>WagonR Tour 08 is due</small></div><span class="badge a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6M12 16.5v.5"/></svg> 11 of 12</span></div>
+            <div class="chk"><div>CNG cylinder re-test (every 3 years)<small>Booked automatically with the next service</small></div><span class="badge b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg> Ertiga Tour 09: next month</span></div>
+            <div class="chk"><div>Tracker and panic button serviced at the commercial outlet<small>No separate vendor to chase</small></div><span class="badge g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> Included</span></div>
+          </div>
+          <div class="law"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Taxis must carry the tracker and panic button by law,</b> so a fleet would pay for one anyway. With Suzuki Connect Fleet it comes fitted and maintained, inside the ₹250 a month plan.</div></div>
         </div>
       </div>
     </div></div><div class="base"></div></div></div>
@@ -611,10 +734,34 @@ const S = [
    h:'Fleets get paid when a taxi is stuck',
    p:'Off the road beyond 24 hours: ₹1,000 a day, up to 3 days, paid to UPI automatically. One plan for every feature.',
    chips:[['₹250','per vehicle a month'],['₹1,000','a day, paid automatically','g']]},
-  {dev:'laptop', l:'map', act:3, dur:9000, tag:'Fleet · compliance built in',
-   h:'The tracker the law needs, fitted at delivery',
-   p:'Live location, driver scores and the panic button in one dashboard, sold through 368 commercial outlets.',
+  {dev:'laptop', l:'map', act:3, dur:9000, tag:'Fleet · live map',
+   h:'Every car on one map, with a panic button',
+   p:'Live location of every vehicle. A panic press alerts the owner\'s control room and the state emergency system, with the location.',
    chips:[['AIS-140','ready from day one']]},
+  {dev:'laptop', l:'veh', act:3, dur:7000, tag:'Fleet · vehicles',
+   h:'Every car and driver in one list',
+   p:'Who is driving, how far today and when the next service is due.',
+   chips:[['1,395 km','driven today'],['9 of 12','on trip']]},
+  {dev:'laptop', l:'cng', act:3, dur:8000, tag:'Fleet · CNG and fuel',
+   h:'Spot the car burning extra CNG',
+   p:'CNG per 100 km for each car. Dzire Tour 07 uses 27% more than the fleet average: about 4.6 kg extra today.',
+   chips:[['27%','above average','r']]},
+  {dev:'laptop', l:'drv', act:3, dur:7000, tag:'Fleet · drivers',
+   h:'Driver scores the owner can act on',
+   p:'Harsh braking and overspeeding for each driver. Scores go only to the fleet owner, and drivers know what is tracked.',
+   chips:[['85','average score']]},
+  {dev:'laptop', l:'svc', act:3, dur:7000, tag:'Fleet · service',
+   h:'Service before it breaks down',
+   p:'Due soonest first. One tap books a priority bay, so the car is off the road for the shortest time.',
+   chips:[['Priority','bay in one tap']]},
+  {dev:'laptop', l:'upt', act:3, dur:9000, tag:'Fleet · uptime promise',
+   h:'The uptime promise, in rupees',
+   p:'Off the road 31 hours. Beyond the first 24, Maruti pays ₹1,000 a day, up to 3 days, straight to UPI.',
+   chips:[['₹1,000','paid today','g'],['₹250','per vehicle a year budgeted']]},
+  {dev:'laptop', l:'cmp', act:3, dur:7000, tag:'Fleet · compliance',
+   h:'Legal checks, handled',
+   p:'The AIS-140 tracker and panic button the law requires come fitted and maintained, with CNG re-tests tracked.',
+   chips:[['12 of 12','trackers fitted','g']]},
   {full:'f-close', act:4, dur:7000}
 ];
 
@@ -625,6 +772,19 @@ const isStatic=()=>document.body.classList.contains('static');
 const hands=()=>auto||isStatic();
 const later=(fn,ms)=>timers.push(setTimeout(fn,ms));
 const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+(function renderFleet(){
+  const st={trip:'<span class="st trip"><i></i>On trip</span>',ws:'<span class="st ws"><i></i>In workshop</span>',idle:'<span class="st idle"><i></i>Idle</span>'};
+  const veh=[['Dzire Tour 01','Ramesh K','trip',182,'3,400 km'],['Dzire Tour 02','Imran S','trip',164,'5,200 km'],['Ertiga Tour 03','Suresh P','ws',0,'now'],['Dzire Tour 04','Anil M','trip',201,'600 km'],['Eeco 05','Vijay R','trip',96,'2,900 km'],['Dzire Tour 06','Prakash D','trip',175,'7,100 km'],['Dzire Tour 07','Faiz A','trip',188,'4,300 km'],['WagonR Tour 08','Mahesh T','idle',0,'8,800 km'],['Ertiga Tour 09','Kiran B','trip',143,'1,500 km'],['Dzire Tour 10','Santosh N','trip',158,'6,200 km'],['Super Carry 11','Ravi L','trip',88,'3,700 km'],['Dzire Tour 12','Deepak J','idle',0,'9,400 km']];
+  document.getElementById('t-veh').insertAdjacentHTML('beforeend', veh.map(v=>`<tr><td>${v[0]}</td><td>${v[1]}</td><td>${st[v[2]]}</td><td class="n">${v[3]}</td><td class="n">${v[4]}</td></tr>`).join(''));
+  const cng=[['Dzire Tour 01',9.1],['Dzire Tour 02',8.8],['Dzire Tour 04',9.4],['Eeco 05',7.2],['Dzire Tour 06',9.0],['Dzire Tour 07',11.6],['Ertiga Tour 09',10.2],['Dzire Tour 10',8.9],['Super Carry 11',8.1]];
+  const MAX=13, AVG=9.1;
+  document.getElementById('cngbars').innerHTML = cng.map((c,k)=>`<div class="cbar${c[1]>AVG*1.2?' hi':''}"><span>${c[0]}</span><div class="trk"><div class="fill" data-w="${(c[1]/MAX*100).toFixed(1)}"></div>${k===0?`<div class="avg" style="left:${(AVG/MAX*100).toFixed(1)}%"><span class="avglab">Fleet average 9.1 kg</span></div>`:`<div class="avg" style="left:${(AVG/MAX*100).toFixed(1)}%"></div>`}</div><span class="n">${c[1].toFixed(1)} kg</span></div>`).join('');
+  const drv=[['Santosh N','Dzire Tour 10',94,1,0],['Ramesh K','Dzire Tour 01',92,2,0],['Prakash D','Dzire Tour 06',91,2,0],['Suresh P','Ertiga Tour 03',90,1,0],['Deepak J','Dzire Tour 12',89,2,1],['Imran S','Dzire Tour 02',88,3,1],['Mahesh T','WagonR Tour 08',87,3,1],['Vijay R','Eeco 05',85,4,1],['Kiran B','Ertiga Tour 09',83,5,2],['Ravi L','Super Carry 11',80,6,2],['Anil M','Dzire Tour 04',74,9,4],['Faiz A','Dzire Tour 07',69,11,6]];
+  document.getElementById('t-drv').insertAdjacentHTML('beforeend', drv.map(d=>{const c=d[2]<72?'r':d[2]<78?'a':''; return `<tr class="${c==='r'?'low':''}"><td>${d[0]}</td><td>${d[1]}</td><td class="n"><span class="score ${c}"><i style="--w:${d[2]}%"></i><b>${d[2]}</b></span></td><td class="n">${d[3]}</td><td class="n">${d[4]}</td></tr>`;}).join(''));
+  const svc=[['Dzire Tour 04',600],['Ertiga Tour 09',1500],['Eeco 05',2900],['Dzire Tour 01',3400],['Super Carry 11',3700],['Dzire Tour 07',4300]];
+  document.getElementById('t-svc').insertAdjacentHTML('beforeend', svc.map(s=>{const w=Math.max(6,100-s[1]/50); const c=s[1]<1000?'var(--red)':s[1]<2000?'var(--amber)':'var(--blue)'; return `<tr><td>${s[0]}${s[0]==='Ertiga Tour 09'?' <span class="st idle" style="margin-left:6px">+ CNG re-test</span>':''}</td><td class="n" style="text-align:left">${s[1].toLocaleString('en-IN')} km</td><td><span class="duebar"><i style="--w:${w}%;--c:${c}"></i></span></td><td class="n"><span class="sbtn book tap" style="display:inline-block;min-width:150px">Book priority bay</span></td></tr>`;}).join(''));
+  document.querySelectorAll('.sbtn.book').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); const on=b.classList.toggle('ok'); b.textContent=on?'✓ Bay booked':'Book priority bay';}));
+})();
 
 /* captions */
 const capBox=$('#caption');
@@ -665,7 +825,8 @@ function resetAll(){
   $('#tg-km').classList.remove('on');
   $('#upi-done').classList.remove('on'); $('#btn-upi').classList.remove('press');
   $('#toast').classList.remove('on'); $('#y3').classList.remove('on'); $('#btn-sign').classList.remove('press');
-  $('#stamp').classList.remove('on');
+  $('#stamp').classList.remove('on'); $('#stamp2').classList.remove('on');
+  $$('#cngbars .fill').forEach(f=>f.style.width='0'); $('#ufill').style.width='0'; $('#utl').classList.remove('on');
   clearPanic();
 }
 
@@ -711,11 +872,13 @@ function go(i){
     $$('.lview').forEach(v=>v.classList.toggle('on', v.dataset.l===s.l));
     $$('.nav').forEach(n=>n.classList.toggle('on', n.dataset.n===s.l));
     if(s.l==='ov') later(()=>$('#stamp').classList.add('on'),1600);
+    if(s.l==='cng') later(()=>$$('#cngbars .fill').forEach(f=>f.style.width=f.dataset.w+'%'),300);
+    if(s.l==='upt'){ later(()=>{ $('#ufill').style.width='32.3%'; $('#utl').classList.add('on'); },300); later(()=>$('#stamp2').classList.add('on'),1700); }
     if(s.l==='map' && hands()) later(triggerPanic,3200);
   }
   $$('.cta').forEach(c=>c.classList.toggle('go',false));
   later(()=>{ const ctas={home:'[data-v=home] .cta',plan:'[data-v=plan] .cta',save:'[data-v=save] .cta',consent:'[data-v=consent] .cta',upi:'#btn-upi'};
-    const sel = s.dev==='phone' ? ctas[s.v] : s.st==='offer' ? '#btn-sign' : s.l==='map' ? '#pbtn' : null;
+    const nx=S[i+1]; const sel = s.dev==='phone' ? ctas[s.v] : s.st==='offer' ? '#btn-sign' : s.l==='map' ? '#pbtn' : (s.l && nx && nx.l) ? '.nav[data-n='+nx.l+']' : null;
     if(sel && !(s.v==='upi' && $('#upi-done').classList.contains('on')) && !(s.l==='map' && $('#alert').classList.contains('on'))) $(sel).classList.add('go'); }, 1800);
   if(auto) schedule();
 }
