@@ -94,8 +94,8 @@ body.portrait .rule span{font-size:76px}
 #dots i{width:10px;height:10px;border-radius:50%;background:#C9CFE3;transition:all .3s}
 #dots i.on{width:30px;border-radius:6px;background:var(--navy)}
 #dots i.done{background:#8C93C7}
-#ctrls{position:absolute;right:56px;bottom:84px;display:flex;gap:10px;transition:opacity .4s}
-#ctrls button{height:52px;padding:0 22px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:19px;font-weight:600;color:var(--navy);box-shadow:0 6px 16px rgba(18,20,106,.08)}
+#ctrls{position:absolute;right:56px;bottom:9px;z-index:6;display:flex;gap:10px;transition:opacity .4s}
+#ctrls button{height:50px;padding:0 22px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:19px;font-weight:600;color:var(--navy);box-shadow:0 6px 16px rgba(18,20,106,.08)}
 #ctrls button.pri{background:var(--navy);color:#fff;border-color:var(--navy)}
 body.clean #ctrls{opacity:0;pointer-events:none}
 body.static *,body.static *:before,body.static *:after{transition:none!important;animation:none!important}
@@ -407,6 +407,52 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
 .badge.g{background:var(--green-bg);color:var(--green)}.badge.a{background:var(--amber-bg);color:var(--amber)}.badge.b{background:var(--sky);color:var(--navy)}
 .law{margin-top:12px;display:flex;gap:12px;align-items:center;background:var(--navy);color:#fff;border-radius:14px;padding:13px 16px;font-size:13.5px;line-height:1.45}
 .law svg{width:26px;height:26px;flex:none}
+/* ---- polish: layout ---- */
+body.wide:not(.portrait) #devarea{width:1300px}
+body.wide:not(.portrait) #caption{left:1390px;width:470px}
+body.wide:not(.portrait) .cap h1{font-size:48px}
+body.wide:not(.portrait) .cap p{font-size:24px;margin-top:20px}
+body.wide:not(.portrait) .chip{font-size:19px;padding:11px 16px}
+body.wide:not(.portrait) .chip b{font-size:22px}
+#prog{position:absolute;left:0;right:0;top:91px;height:4px;background:transparent;z-index:5}
+#prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--navy),var(--blue) 70%,var(--red));border-radius:0 3px 3px 0;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+#dots{display:none}
+#step{position:absolute;right:300px;bottom:0;height:70px;display:flex;align-items:center;font-size:17px;font-weight:700;color:var(--navy);letter-spacing:.3px}
+#step span{color:var(--muted);font-weight:600;margin-left:6px}
+body.portrait #step{display:none}
+/* ---- polish: motion ---- */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.965) translateY(10px)}to{opacity:1;transform:none}}
+.lview.on .stg>*,.pview.on .stg>*{animation:rise .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*55ms + 120ms)}
+.lview.on .tbl tr{animation:rise .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*35ms + 100ms)}
+.device.on>*{animation:pop .6s cubic-bezier(.2,.8,.2,1) both}
+.push{position:absolute;left:10px;right:10px;top:52px;z-index:18;display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 14px 30px rgba(10,12,51,.22);transform:translateY(-140%);opacity:0;transition:transform .55s cubic-bezier(.2,.9,.25,1),opacity .3s}
+.push.on{transform:none;opacity:1}
+.push .ap{flex:none;width:34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px}
+.push b{display:block;font-size:13.5px}
+.push small{display:block;font-size:12px;color:var(--muted);line-height:1.35}
+.push em{font-style:normal;float:right;font-size:11px;color:var(--muted);font-weight:600}
+/* ---- uptime page ---- */
+.upt{display:grid;grid-template-columns:1fr 300px;gap:14px;height:100%}
+.uhead{display:flex;flex-direction:column;gap:6px}
+.uhead b{font-size:17px;line-height:1.35;color:var(--ink)}
+.uhead b i{font-style:normal;color:var(--green)}
+.usteps{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.usteps div{background:var(--bg);border-radius:12px;padding:9px 11px;position:relative}
+.usteps em{font-style:normal;position:absolute;right:10px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center}
+.usteps b{display:block;font-size:13px}
+.usteps small{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.3;padding-right:14px}
+.usteps div:last-child{background:var(--green-bg)}
+.usteps div:last-child em{background:var(--green)}
+.uex{margin-top:12px;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1.5px dashed #BFE5CF;background:#F6FBF8;font-size:13px;line-height:1.4}
+.uex b{color:var(--navy)}
+.uex .amt{margin-left:auto;flex:none;font-size:20px;font-weight:800;color:var(--green)}
+.tc{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.tc div{border-left:3px solid var(--green);padding:1px 0 1px 10px}
+.tc div.x{border-left-color:var(--red)}
+.tc h6{font-size:12.5px;font-weight:800;color:var(--ink);letter-spacing:.2px}
+.tc p{font-size:12px;line-height:1.38;color:#3A4166;margin-top:1px}
+.tcnote{margin-top:10px;font-size:11.5px;color:var(--muted);line-height:1.4;padding-top:8px;border-top:1px solid var(--line)}
 @keyframes pulse{0%{r:9;opacity:.7}100%{r:30;opacity:0}}
 .pulse{animation:pulse 1.2s ease-out infinite}
 </style>
@@ -452,6 +498,7 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
     <!-- PHONE -->
     <div class="device" id="d-phone"><div class="phone"><div class="pscreen">
       <div class="island"></div>
+      <div class="push" id="push"><div class="ap">S</div><div><em>now</em><b>Battery health 62%</b><small>Spotted from your service record. Tap to book a free check.</small></div></div>
       <div class="sbar"><span>9:41</span><span>5G&nbsp;&nbsp;100%</span></div>
 
       <!-- p1 home with warranty nudge -->
@@ -470,7 +517,7 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
         <div class="tier on"><div><b>Entry cars</b><small>Alto, WagonR, Celerio</small></div><div class="pr">₹349<small> a month</small><small>or ₹3,999 a year</small></div></div>
         <div class="tier"><div><b>Hatchbacks, sedans</b><small>Swift, Dzire, Baleno</small></div><div class="pr">₹5,499<small> a year</small></div></div>
         <div class="tier"><div><b>SUVs, MPVs</b><small>Brezza, Ertiga, Grand Vitara</small></div><div class="pr">₹6,999<small> a year</small></div></div>
-        <div class="incl">
+        <div class="incl stg">
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Yearly service, genuine parts</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>24x7 roadside help</div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Pick up and drop</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Battery, brake, tyre warnings</div>
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>CNG re-test booked</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>10% off repairs</div>
@@ -495,7 +542,7 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
       <!-- p4 consent -->
       <div class="pview" data-v="consent">
         <div class="sub-head"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></i><div><b>Your data, your choice</b><small>Choose what each service may use</small></div></div>
-        <div class="cons">
+        <div class="cons stg">
           <div class="crow"><div><b>Service record</b><small>For early warnings and your verified history</small></div><div class="tg on lock"></div></div>
           <div class="crow"><div><b>Kilometres driven</b><small>For Drive Less, Pay Less: a lower insurance price</small></div><div class="tg" id="tg-km"></div></div>
           <div class="crow"><div><b>Safe driving score</b><small>Optional. It can only lower your price</small></div><div class="tg"></div></div>
@@ -600,12 +647,12 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
         <div class="lhead"><div><b>Sample Cabs</b><small>12 vehicles · Today, 11:20 am</small></div><div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8Z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg> One plan: ₹250 per vehicle a month</div></div>
 
         <div class="lview" data-l="ov">
-          <div class="kpis">
-            <div class="kpi"><b>12</b><small>vehicles</small></div>
-            <div class="kpi"><b>9</b><small>on trip now</small></div>
+          <div class="kpis stg">
+            <div class="kpi"><b data-count="12">12</b><small>vehicles</small></div>
+            <div class="kpi"><b data-count="9">9</b><small>on trip now</small></div>
             <div class="kpi"><b>1</b><small>in the workshop</small></div>
-            <div class="kpi"><b>85</b><small>average driver score</small></div>
-            <div class="kpi"><b>130 kg</b><small>CNG used today</small></div>
+            <div class="kpi"><b data-count="85">85</b><small>average driver score</small></div>
+            <div class="kpi"><b data-count="130" data-suf=" kg">130 kg</b><small>CNG used today</small></div>
           </div>
           <div class="attn">
             <h4>Needs attention</h4>
@@ -614,7 +661,7 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
             <div class="arow"><span class="tagx b">Service</span><div><b>Dzire Tour 04: service due in 600 km</b><small>Priority bay at the commercial outlet keeps it off the road for the shortest time.</small></div><span class="act2 tap" data-go="14">Book bay →</span></div>
             <div class="arow tap" data-go="16"><span class="tagx g">Legal</span><div><b>Ertiga Tour 09: CNG cylinder re-test due next month</b><small>Booked automatically with the next service.</small></div><span class="act2">Booked</span></div>
           </div>
-          <div class="comp">
+          <div class="comp stg">
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>AIS-140 tracker fitted at delivery: 12 of 12</div>
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Panic button tested this month: 11 of 12</div>
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Sold at 368 commercial outlets</div>
@@ -632,13 +679,13 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
           </div>
         </div>
 
-        <div class="lview" data-l="veh"><div class="sumline"><span><b>9</b>on trip</span><span><b>1</b>in the workshop</span><span><b>2</b>idle</span><span><b>1,395 km</b>driven today</span></div>
+        <div class="lview" data-l="veh"><div class="sumline stg"><span><b>9</b>on trip</span><span><b>1</b>in the workshop</span><span><b>2</b>idle</span><span><b data-count="1395" data-suf=" km">1,395 km</b>driven today</span></div>
           <table class="tbl" id="t-veh"><tr><th>Vehicle</th><th>Driver</th><th>Status</th><th class="n">Km today</th><th class="n">Next service in</th></tr></table></div>
 
         <div class="lview" data-l="cng"><div class="two">
-          <div class="card"><h4>CNG used per 100 km today</h4><div id="cngbars" style="margin-top:20px"></div>
+          <div class="card"><h4>CNG used per 100 km today</h4><div id="cngbars" class="stg" style="margin-top:20px"></div>
             <div class="cnote">Red: more than 20% above the fleet average. Not shown: Ertiga Tour 03 (in the workshop), WagonR Tour 08 and Dzire Tour 12 (idle, no trips).</div></div>
-          <div class="stack">
+          <div class="stack stg">
             <div class="mini"><h5>What it measures</h5><p>Kilograms of CNG per 100 km, so a car that drove more is not unfairly flagged.</p></div>
             <div class="mini"><h5>What it shows</h5><p>Most cars sit near the fleet average of 9.1 kg. <b>Dzire Tour 07 uses 11.6 kg, about 27% more</b>: roughly 4.6 kg of extra CNG on today's 188 km.</p></div>
             <div class="mini"><h5>What the owner does</h5><p>High use usually means harsh driving or a car that needs a service. Check both.</p>
@@ -653,30 +700,39 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
           <div class="sumline"><span>Due soonest first. A <b>priority bay</b> at the commercial outlet keeps the car off the road for the shortest time.</span></div>
           <table class="tbl" id="t-svc"><tr><th>Vehicle</th><th>Due in</th><th class="n"></th><th class="n">Priority bay</th></tr></table></div>
 
-        <div class="lview" data-l="upt"><div class="two">
-          <div class="card"><h4>Ertiga Tour 03 · in the workshop for a covered repair</h4>
-            <div class="utl" id="utl"><div class="useg"><div><b>First 24 hours</b>free</div><div><b>Day 1</b>₹1,000</div><div><b>Day 2</b>₹1,000</div><div><b>Day 3</b>₹1,000 (cap)</div></div>
-              <div class="ufill" id="ufill"></div><div class="unow" id="unow" style="left:32.3%">Now: 31 hours</div></div>
-            <div class="ustats">
-              <div><b>31 hrs</b><small>off the road</small></div>
-              <div><b>1 day</b><small>beyond 24 hours</small></div>
-              <div class="g"><b>₹1,000</b><small>paid to the fleet's UPI</small></div>
-              <div class="r"><b>~₹2,600</b><small>driver income lost</small></div>
+        <div class="lview" data-l="upt"><div class="upt">
+          <div class="card">
+            <div class="uhead"><h4>Uptime promise · how Maruti pays</h4><b>If a covered repair keeps the car off the road for more than 24 hours, Maruti pays the fleet <i>₹1,000 for every extra day, or part of one</i>, up to 3 days.</b></div>
+            <div class="usteps stg">
+              <div><em>1</em><b>Car checked in</b><small>Job card opened at the workshop: the clock starts</small></div>
+              <div><em>2</em><b>First 24 hours</b><small>Maruti's normal repair time: no payout</small></div>
+              <div><em>3</em><b>Every extra day</b><small>₹1,000 to the fleet's UPI, up to 3 days</small></div>
             </div>
-            <div class="cnote" style="margin-top:14px">The promise covers part of the lost income, so Maruti and the fleet both want the car back fast. Our model budgets about ₹250 per vehicle a year for payouts.</div>
-            <div style="margin-top:12px"><div class="stamp" id="stamp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> ₹1,000 paid automatically, no claim form</div></div>
+            <div class="utl" id="utl"><div class="useg"><div><b>0 to 24 hrs</b>free</div><div><b>24 to 48 hrs</b>₹1,000</div><div><b>48 to 72 hrs</b>₹1,000</div><div><b>72 to 96 hrs</b>₹1,000 (cap)</div></div>
+              <div class="ufill" id="ufill"></div><div class="unow" id="unow" style="left:32.3%">Ertiga Tour 03: 31 hours</div></div>
+            <div class="uex"><div><b>Today's example:</b> Ertiga Tour 03 has been in for a covered repair for <b>31 hours</b>. That is 7 hours into the first extra day, so <b>1 day is paid</b>.</div><span class="amt">₹1,000</span></div>
+            <div class="ustats stg">
+              <div><b data-count="31" data-suf=" hrs">31 hrs</b><small>off the road</small></div>
+              <div class="g"><b data-count="1000" data-pre="₹">₹1,000</b><small>paid to UPI today</small></div>
+              <div><b data-count="3000" data-pre="₹">₹3,000</b><small>most per repair</small></div>
+              <div class="r"><b data-count="2600" data-pre="~₹">~₹2,600</b><small>driver income lost</small></div>
+            </div>
+            <div style="margin-top:10px"><div class="stamp" id="stamp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> ₹1,000 sent to the fleet's UPI · no claim form</div></div>
           </div>
-          <div class="card"><h4>The rules</h4><div class="rules">
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>First 24 hours free, then ₹1,000 a day</div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Up to 3 days per repair, 2 claims a year</div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>For cars serviced on time, at outlets with parts in stock</div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Starts after 30 days on the plan</div>
-            <div class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6M12 16.5v.5"/></svg>Accident and body repairs excluded: insurance covers them</div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>Paid to UPI within 7 days, worked out from the job card</div>
-          </div></div></div></div>
+          <div class="card"><h4>Terms and conditions</h4>
+            <div class="tc stg">
+              <div><h6>Who qualifies</h6><p>Fleet plan active for at least 30 days, and the last scheduled service done on time at a Maruti workshop.</p></div>
+              <div><h6>What is covered</h6><p>Mechanical and electrical repairs at listed fleet workshops that keep fleet parts in stock.</p></div>
+              <div class="x"><h6>Not covered</h6><p>Accident and body repairs (insurance covers these), non-genuine parts or a CNG kit not fitted by Maruti, misuse, and time spent waiting for the owner's approval or payment.</p></div>
+              <div><h6>Limits</h6><p>Up to 3 days (₹3,000) per repair, and 2 claims a year (₹6,000 at most).</p></div>
+              <div><h6>How it is paid</h6><p>Worked out from the job card and paid to the fleet's UPI within 7 days. No claim form.</p></div>
+            </div>
+            <div class="tcnote">A promise on Maruti's own repair time, not insurance. Our model budgets about ₹250 per vehicle a year for payouts.</div>
+          </div>
+        </div></div>
 
         <div class="lview" data-l="cmp">
-          <div class="card" style="padding:0">
+          <div class="card stg" style="padding:0">
             <div class="chk"><div>Government-approved tracker (AIS-140), fitted before delivery<small>Tracking and panic button compliance built in</small></div><span class="badge g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg> All 12 vehicles</span></div>
             <div class="chk"><div>Panic button tested this month<small>WagonR Tour 08 is due</small></div><span class="badge a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6M12 16.5v.5"/></svg> 11 of 12</span></div>
             <div class="chk"><div>CNG cylinder re-test (every 3 years)<small>Booked automatically with the next service</small></div><span class="badge b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg> Ertiga Tour 09: next month</span></div>
@@ -691,7 +747,9 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
   <div id="caption"></div>
 
   <div id="ctrls"><button id="c-back">← Back</button><button class="pri" id="c-next">Next →</button></div>
-  <footer id="foot"><span>Concept prototype by Team Gini, not a Maruti Suzuki product · sample owner, car and data · car image: marutisuzuki.com</span><div id="dots"></div></footer>
+  <div id="prog"><i></i></div>
+  <footer id="foot"><span>Concept prototype by Team Gini · sample data · not a Maruti Suzuki product</span><div id="dots"></div></footer>
+  <div id="step"></div>
   <div id="flash"></div>
 </div></div>
 
@@ -754,10 +812,10 @@ const S = [
    h:'Service before it breaks down',
    p:'Due soonest first. One tap books a priority bay, so the car is off the road for the shortest time.',
    chips:[['Priority','bay in one tap']]},
-  {dev:'laptop', l:'upt', act:3, dur:9000, tag:'Fleet · uptime promise',
-   h:'The uptime promise, in rupees',
-   p:'Off the road 31 hours. Beyond the first 24, Maruti pays ₹1,000 a day, up to 3 days, straight to UPI.',
-   chips:[['₹1,000','paid today','g'],['₹250','per vehicle a year budgeted']]},
+  {dev:'laptop', l:'upt', act:3, dur:10000, tag:'Fleet · uptime promise',
+   h:'Repair over 24 hours? Maruti pays',
+   p:'₹1,000 for every extra day, or part of one, up to 3 days per repair. Worked out from the job card and paid to UPI, with no claim form.',
+   chips:[['₹1,000','per extra day','g'],['₹3,000','cap per repair']]},
   {dev:'laptop', l:'cmp', act:3, dur:7000, tag:'Fleet · compliance',
    h:'Legal checks, handled',
    p:'The AIS-140 tracker and panic button the law requires come fitted and maintained, with CNG re-tests tracked.',
@@ -786,6 +844,13 @@ const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
   document.querySelectorAll('.sbtn.book').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); const on=b.classList.toggle('ok'); b.textContent=on?'✓ Bay booked':'Book priority bay';}));
 })();
 
+/* stagger indexes */
+$$('.stg').forEach(g=>[...g.children].forEach((c,k)=>c.style.setProperty('--i',k)));
+$$('.tbl').forEach(tb=>tb.querySelectorAll('tr').forEach((row,k)=>row.style.setProperty('--i',k)));
+function countUp(root){ if(!root) return;
+  root.querySelectorAll('[data-count]').forEach(el=>{ const to=+el.dataset.count, pre=el.dataset.pre||'', suf=el.dataset.suf||'';
+    tween(0,to,900,v=>el.textContent=pre+Math.round(v).toLocaleString('en-IN')+suf); }); }
+
 /* captions */
 const capBox=$('#caption');
 S.forEach((s,i)=>{ if(!s.h) return;
@@ -804,7 +869,7 @@ function fit(){
   stage.style.width=W+'px'; stage.style.height=H+'px'; stage.style.setProperty('--H',H+'px');
   stage.style.transform=`scale(${Math.min(vw/W,vh/H)})`;
   const a=$('#devarea'), aw=a.offsetWidth, ah=a.offsetHeight;
-  [['#d-phone',456,906,1.02],['#d-tablet',1060,650,1],['#d-laptop',1200,690,1]].forEach(([id,w,h,mx])=>{
+  [['#d-phone',456,906,1.02],['#d-tablet',1060,650,1.15],['#d-laptop',1200,690,1.12]].forEach(([id,w,h,mx])=>{
     const sc=Math.min(aw/w, ah/h, mx); $(id).style.transform=`translate(-50%,-50%) scale(${sc})`;});
 }
 addEventListener('resize',fit);
@@ -825,7 +890,7 @@ function resetAll(){
   $('#tg-km').classList.remove('on');
   $('#upi-done').classList.remove('on'); $('#btn-upi').classList.remove('press');
   $('#toast').classList.remove('on'); $('#y3').classList.remove('on'); $('#btn-sign').classList.remove('press');
-  $('#stamp').classList.remove('on'); $('#stamp2').classList.remove('on');
+  $('#stamp').classList.remove('on'); $('#stamp2').classList.remove('on'); $('#push').classList.remove('on');
   $$('#cngbars .fill').forEach(f=>f.style.width='0'); $('#ufill').style.width='0'; $('#utl').classList.remove('on');
   clearPanic();
 }
@@ -844,12 +909,19 @@ function go(i){
   $$('.act').forEach(a=>{const n=+a.dataset.act; a.classList.toggle('on', n===s.act); a.classList.toggle('done', n<s.act);});
   $$('#dots i').forEach((d,k)=>{d.className = k===i?'on':(k<i?'done':'');});
   history.replaceState(null,'','#'+i);
+  const wide = s.dev==='tablet'||s.dev==='laptop';
+  if(document.body.classList.contains('wide')!==wide){ document.body.classList.toggle('wide',wide); fit(); }
+  $('#prog i').style.width=(i/(S.length-1)*100)+'%';
+  const names={1:'Owner',2:'Dealer',3:'Fleet'};
+  if(names[s.act]){ const grp=S.map((x,k)=>[x,k]).filter(([x])=>x.act===s.act); const pos=grp.findIndex(([,k])=>k===i)+1;
+    $('#step').innerHTML=`${names[s.act]}<span>${pos} of ${grp.length}</span>`; } else $('#step').innerHTML='';
   // phone
   if(s.dev==='phone'){
     $$('.pview').forEach(v=>{const on=v.dataset.v===s.v; v.classList.toggle('on',on);});
     $$('.tab').forEach(t=>t.classList.toggle('on', t.dataset.t===s.tab));
     if(s.v==='save') later(()=>$$('[data-v=save] .fill').forEach(f=>f.style.width=f.dataset.w+'%'),350);
     if(s.v==='consent') later(()=>$('#tg-km').classList.add('on'),1500);
+    if(s.v==='active'){ later(()=>$('#push').classList.add('on'),900); if(!isStatic()) later(()=>$('#push').classList.toggle('on',false),5200); }
     if(s.v==='upi' && hands()){ later(confirmUPI,2300); }
   }
   // tablet
@@ -875,6 +947,7 @@ function go(i){
     if(s.l==='cng') later(()=>$$('#cngbars .fill').forEach(f=>f.style.width=f.dataset.w+'%'),300);
     if(s.l==='upt'){ later(()=>{ $('#ufill').style.width='32.3%'; $('#utl').classList.add('on'); },300); later(()=>$('#stamp2').classList.add('on'),1700); }
     if(s.l==='map' && hands()) later(triggerPanic,3200);
+    later(()=>countUp($('.lview.on')),200);
   }
   $$('.cta').forEach(c=>c.classList.toggle('go',false));
   later(()=>{ const ctas={home:'[data-v=home] .cta',plan:'[data-v=plan] .cta',save:'[data-v=save] .cta',consent:'[data-v=consent] .cta',upi:'#btn-upi'};
@@ -906,6 +979,7 @@ $$('[data-back]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation(
 $$('.act').forEach(a=>a.addEventListener('click',()=>go({1:1,2:7,3:9}[a.dataset.act])));
 $$('#f-intro .tcard').forEach((c,k)=>c.addEventListener('click',()=>go([1,7,9][k])));
 $$('.tg:not(.lock)').forEach(g=>g.addEventListener('click',e=>{e.stopPropagation(); g.classList.toggle('on');}));
+$('#push').addEventListener('click',e=>{e.stopPropagation(); $('#push').classList.remove('on');});
 $('#c-next').onclick=()=>{go(cur+1); if(auto) schedule();};
 $('#c-back').onclick=()=>go(cur-1);
 let tx=null; addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
