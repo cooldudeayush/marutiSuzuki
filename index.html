@@ -8,7 +8,7 @@
 <style>
 :root{--navy:#1B1D8F;--navy2:#12146A;--blue:#2E5BFF;--sky:#E8EDFF;--red:#E31E24;--ink:#11163A;--muted:#5F6787;--line:#E2E6F1;--bg:#F5F7FC;--green:#1E8A4C;--green-bg:#E5F5EC;--amber:#C77C02;--amber-bg:#FFF3DD}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#0A0C33;overflow:hidden;font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+html,body{height:100%;background:#E9EDF8;overflow:hidden;font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 svg{flex-shrink:0}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 #viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
@@ -32,10 +32,10 @@ body.portrait .brand span{display:none}
 body.portrait .act{padding:8px 16px;font-size:18px}
 
 /* layout areas */
-#devarea{position:absolute;left:56px;top:118px;width:1090px;height:880px}
-#caption{position:absolute;left:1190px;top:118px;width:670px;height:860px}
-body.portrait #devarea{left:40px;top:120px;width:1000px;height:1120px}
-body.portrait #caption{left:70px;top:1270px;width:940px;height:520px}
+#devarea{position:absolute;left:56px;top:118px;width:1090px;height:calc(var(--H,1080px) - 200px)}
+#caption{position:absolute;left:1190px;top:118px;width:670px;height:calc(var(--H,1080px) - 220px)}
+body.portrait #devarea{left:40px;top:120px;width:1000px;height:calc(var(--H,1920px) - 800px)}
+body.portrait #caption{left:70px;top:calc(var(--H,1920px) - 650px);width:940px;height:520px}
 .device{position:absolute;left:50%;top:50%;opacity:0;pointer-events:none;transition:opacity .55s ease}
 .device.on{opacity:1;pointer-events:auto}
 #d-phone{left:66%}
@@ -96,7 +96,7 @@ body.portrait .rule span{font-size:76px}
 #ctrls{position:absolute;right:56px;bottom:84px;display:flex;gap:10px;transition:opacity .4s}
 #ctrls button{height:52px;padding:0 22px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:19px;font-weight:600;color:var(--navy);box-shadow:0 6px 16px rgba(18,20,106,.08)}
 #ctrls button.pri{background:var(--navy);color:#fff;border-color:var(--navy)}
-body.clean #ctrls,body.idle #ctrls{opacity:0;pointer-events:none}
+body.clean #ctrls{opacity:0;pointer-events:none}
 body.static *,body.static *:before,body.static *:after{transition:none!important;animation:none!important}
 body.portrait #foot{flex-direction:column;justify-content:center;gap:10px;height:110px;text-align:center;padding:0 40px}
 body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
@@ -351,7 +351,7 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
       <div class="tcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5V20h16V9.5"/><path d="M3 9.5 5 4h14l2 5.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0Z"/><path d="M10 20v-5h4v5"/></svg></div><h3>2. The dealer</h3><p>Sells the plan at the service counter, and earns from it.</p></div>
       <div class="tcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3.5V16h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>3. The fleet</h3><p>Gets paid when a taxi is stuck in the workshop.</p></div>
     </div>
-    <div class="hint" id="hint">Press <kbd>→</kbd> to start · <kbd>A</kbd> auto play · <kbd>F</kbd> full screen</div>
+    <div class="hint" id="hint">Click <kbd>Next →</kbd> or press <kbd>→</kbd> to start · <kbd>F</kbd> full screen</div>
   </section>
 
   <!-- CLOSE -->
@@ -555,7 +555,7 @@ body.portrait #ctrls{right:50%;transform:translateX(50%);bottom:120px}
 
   <div id="caption"></div>
 
-  <div id="ctrls"><button id="c-back">← Back</button><button id="c-auto">▶ Auto play</button><button class="pri" id="c-next">Next →</button></div>
+  <div id="ctrls"><button id="c-back">← Back</button><button class="pri" id="c-next">Next →</button></div>
   <footer id="foot"><span>Concept prototype by Team Gini, not a Maruti Suzuki product · sample owner, car and data · car image: marutisuzuki.com</span><div id="dots"></div></footer>
   <div id="flash"></div>
 </div></div>
@@ -625,7 +625,9 @@ function fit(){
   const vw=innerWidth, vh=innerHeight;
   const portrait = vh > vw*1.15;
   document.body.classList.toggle('portrait',portrait);
-  const W=portrait?1080:1920, H=portrait?1920:1080;
+  const W=portrait?1080:1920;
+  const H=portrait?Math.max(1700,Math.min(2300,1080*vh/vw)):Math.max(900,Math.min(1440,1920*vh/vw));
+  stage.style.width=W+'px'; stage.style.height=H+'px'; stage.style.setProperty('--H',H+'px');
   stage.style.transform=`scale(${Math.min(vw/W,vh/H)})`;
   const a=$('#devarea'), aw=a.offsetWidth, ah=a.offsetHeight;
   [['#d-phone',456,906,1.02],['#d-tablet',1060,650,1],['#d-laptop',1200,690,1]].forEach(([id,w,h,mx])=>{
@@ -702,7 +704,7 @@ function go(i){
 
 /* autoplay */
 function schedule(){clearTimeout(autoT); if(cur<S.length-1) autoT=setTimeout(()=>go(cur+1),S[cur].dur); else setAuto(false);}
-function setAuto(on){auto=on; $('#c-auto').textContent=on?'❚❚ Pause':'▶ Auto play'; clearTimeout(autoT); if(on){ if(cur>=S.length-1) go(0); schedule(); } flash(on?'Auto play on':'Auto play off');}
+function setAuto(on){auto=on; clearTimeout(autoT); if(on){ if(cur>=S.length-1) go(0); schedule(); } flash(on?'Auto play on':'Auto play off');}
 function flash(t){const f=$('#flash'); f.textContent=t; f.classList.add('on'); clearTimeout(flash.t); flash.t=setTimeout(()=>f.classList.remove('on'),1200);}
 
 /* input */
@@ -718,8 +720,6 @@ addEventListener('keydown',e=>{
 });
 $('#c-next').onclick=()=>{go(cur+1); if(auto) schedule();};
 $('#c-back').onclick=()=>go(cur-1);
-$('#c-auto').onclick=()=>setAuto(!auto);
-let idleT; addEventListener('mousemove',()=>{document.body.classList.remove('idle'); clearTimeout(idleT); idleT=setTimeout(()=>document.body.classList.add('idle'),2500);});
 let tx=null; addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
 addEventListener('touchend',e=>{if(tx===null)return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50){ go(cur+(dx<0?1:-1)); } tx=null;},{passive:true});
 
@@ -816,7 +816,6 @@ if(q.has('clean')) document.body.classList.add('clean');
 if(q.has('static')) document.body.classList.add('static','clean');
 go(start);
 if(q.has('auto')) setAuto(true);
-setTimeout(()=>document.body.classList.add('idle'),3000);
 </script>
 </body>
 </html>
